@@ -35,3 +35,45 @@ This Python script simulates a game of Blackjack between a player and a dealer. 
 
 - Ensure Python is installed and accessible from the command line.
 - If you encounter any issues, check that the script file is in the correct directory and run it with the full path if necessary.
+.
+.
+.
+# ATM Simulation
+
+A simple command-line ATM (Automated Teller Machine) simulation written in Python.
+
+## Description
+
+This Python script simulates basic ATM operations including checking balance, depositing money, withdrawing money, and exiting the system. It maintains a balance starting at ₹5000 and allows users to perform transactions through a menu-driven interface.
+
+## Requirements
+
+- Python 3.x
+
+## How to Run
+
+1. Ensure you have Python installed on your system.
+2. Run the script using the command:
+   ```
+   python classcode2.py
+   ```
+3. Follow the on-screen menu to perform ATM operations.
+
+## Features
+
+- **Check Balance**: View your current account balance.
+- **Deposit Money**: Add money to your account (must be a positive amount).
+- **Withdraw Money**: Withdraw money from your account (must not exceed balance and be positive).
+- **Exit**: Quit the ATM simulation.
+
+## Usage
+
+- Select an option from the menu by entering the corresponding number (1-4).
+- For deposits and withdrawals, enter the amount when prompted.
+- The program will validate inputs and provide feedback for invalid operations.
+
+## Troubleshooting
+
+- Ensure Python is installed and accessible from the command line.
+- If you encounter any issues, check that the script file is in the correct directory and run it with the full path if necessary.
+- Make sure to enter valid numeric values for amounts.
