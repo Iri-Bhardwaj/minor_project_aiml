@@ -1,0 +1,68 @@
+import random
+
+print("\n--- BLACKJACK GAME ---")
+
+
+cards = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11]
+
+def deal_card():
+    return random.choice(cards)
+
+def calculate_total(hand):
+    total = sum(hand)
+    
+    # Adjust Ace (11 → 1 if total > 21)
+    while total > 21 and 11 in hand:
+        hand[hand.index(11)] = 1
+        total = sum(hand)
+        
+    return total
+
+
+player = [deal_card(), deal_card()]
+dealer = [deal_card(), deal_card()]
+
+game_over = False
+
+
+while not game_over:
+    player_total = calculate_total(player)
+    dealer_total = calculate_total(dealer)
+
+    print("\nYour cards:", player, "Total:", player_total)
+    print("Dealer's first card:", dealer[0])
+
+    if player_total == 21:
+        print("Blackjack! You win ")
+        break
+    elif player_total > 21:
+        print("Bust! You lose ")
+        break
+
+    choice = input("Type 'h' to Hit or 's' to Stand: ").lower()
+
+    if choice == 'h':
+        player.append(deal_card())
+    else:
+        game_over = True
+
+
+while calculate_total(dealer) < 17:
+    dealer.append(deal_card())
+
+player_total = calculate_total(player)
+dealer_total = calculate_total(dealer)
+
+print("\n--- FINAL HANDS ---")
+print("Your cards:", player, "Total:", player_total)
+print("Dealer cards:", dealer, "Total:", dealer_total)
+
+
+if dealer_total > 21:
+    print("Dealer busts! You win ")
+elif player_total > dealer_total:
+    print("You win ")
+elif player_total < dealer_total:
+    print("You lose ")
+else:
+    print("It's a draw ")
